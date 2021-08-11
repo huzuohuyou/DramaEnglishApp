@@ -1,0 +1,122 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\ayw5s-3oeln-001.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Words\**" />
+    <EmbeddedResource Remove="Words\**" />
+    <None Remove="Words\**" />
+    <Page Remove="Words\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\Dashboard\DashboardWindowComponentViewModel.cs" />
+    <Compile Remove="ViewModels\Dashboard\SwitchViewComponentViewModel.cs" />
+    <Compile Remove="Views\Dashboard\DashboardWindowComponent.xaml.cs" />
+    <Compile Remove="Views\Dashboard\DramaOperationComponent.xaml.cs" />
+    <Compile Remove="Views\Dashboard\SwitchViewComponent.xaml.cs" />
+    <Compile Remove="Views\Drama\LinesComponent.xaml.cs" />
+    <Compile Remove="Views\Drama\MediaComponent.xaml.cs" />
+    <Compile Remove="Views\Drama\OperateComponent.xaml.cs" />
+    <Compile Remove="Views\Drama\WordComponent.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Database\sqlite3.def" />
+    <None Remove="Fonts\HarmonyOS_Sans_Regular.ttf" />
+    <None Remove="Resources\13038.jpg" />
+    <None Remove="Resources\alter.png" />
+    <None Remove="Resources\Images\云.png" />
+    <None Remove="Resources\Images\刷新.png" />
+    <None Remove="Resources\Images\发现.png" />
+    <None Remove="Resources\Images\日历.png" />
+    <None Remove="Resources\Images\楼房.png" />
+    <None Remove="Resources\Images\电影.png" />
+    <None Remove="Resources\Images\直播.png" />
+    <None Remove="Resources\wallhaven-73jlxe.png" />
+    <None Remove="Resources\wallhaven-m91869.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\Dashboard\DashboardWindowComponent.xaml" />
+    <Page Remove="Views\Dashboard\DramaOperationComponent.xaml" />
+    <Page Remove="Views\Dashboard\SwitchViewComponent.xaml" />
+    <Page Remove="Views\Drama\LinesComponent.xaml" />
+    <Page Remove="Views\Drama\MediaComponent.xaml" />
+    <Page Remove="Views\Drama\OperateComponent.xaml" />
+    <Page Remove="Views\Drama\WordComponent.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DownloadandUnionTs\CommonService\CommonService.csproj" />
+    <ProjectReference Include="..\DramaEnglish.Application\DramaEnglish.Application.csproj" />
+    <ProjectReference Include="..\DramaEnglish.Domain\DramaEnglish.Domain.csproj" />
+    <ProjectReference Include="..\DramaEnglish.Infrastructure\DramaEnglish.Infrastructure.csproj" />
+    <ProjectReference Include="..\DramaEnglish.Styling\DramaEnglish.Styling.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Database\sqlite3.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\HarmonyOS_Sans_Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\13038.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\alter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\云.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\刷新.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\发现.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\日历.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\楼房.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\电影.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\直播.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\wallhaven-73jlxe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\wallhaven-m91869.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\Test\LoginWindow2.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EventAggregators\" />
+  </ItemGroup>
+
+</Project>

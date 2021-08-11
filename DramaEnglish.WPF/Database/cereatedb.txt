@@ -1,0 +1,30 @@
+sqlite3 wordDB.db
+
+.open wordDB.db
+
+drop table word;
+CREATE TABLE WORD(
+ID                INTEGER PRIMARY KEY  AUTOINCREMENT   NOT NULL,
+EN                TEXT    NOT NULL  ,
+ISWATCHED         INTEGER           ,
+DETAIL            TEXT              ,
+ISFRESH            INTEGER           ,
+HAVEMP4            INTEGER           ,
+LINES             TEXT              ,
+WORDGROUP         TEXT           ,
+CREATEDATE        TEXT           
+);
+
+.open wordDB.db
+alter table WORD add HAVEMP4 INTEGER;  
+
+select * from sqlite_master where type="table" and name="WORD";
+
+insert into WORD
+(en,iswatched,detail,ISFRESH,lines,WORDGROUP) 
+values 
+('hahah',1,'mingxi',0,'aaaaaa','英语二');
+
+select * from word;
+
+db_conn_str = Driver=SQLite3 ODBC Driver;Database=D:\GitHub\DramaEnglish\DramaEnglish.WPF\Database\wordDB.db;LongNames=0;Timeout=100;NoTXN=0;SyncPragma=NORMAL;StepAPI=0;
