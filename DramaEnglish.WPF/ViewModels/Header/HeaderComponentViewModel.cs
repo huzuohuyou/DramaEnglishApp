@@ -1,5 +1,7 @@
 ﻿using CommonService.DB;
+using DramaEnglish.Styling.EventAggregator;
 using DramaEnglish.WPF.ViewModels;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -49,9 +51,10 @@ namespace DramaEnglish.UserInterface.ViewModels.Header
                 KnowWordCount = WordDBService.IKnowWordCount();
                 HasMP4Count = WordDBService.HasMP4Count();
             }
-
-
         }
+
+        public DelegateCommand CloseCommand => new(() => EventAggregator.GetEvent<PubSubEvent<EnumFormStatus>>().Publish(EnumFormStatus.close));
+
         #endregion
 
 

@@ -1,4 +1,5 @@
-﻿using DramaEnglish.UserInterface.ViewModels.Drama;
+﻿using DramaEnglish.Styling.EventAggregator;
+using DramaEnglish.UserInterface.ViewModels.Drama;
 using DramaEnglish.WPF.ViewModels;
 using Prism.Commands;
 using Prism.Events;
@@ -44,6 +45,15 @@ namespace DramaEnglish.UserInterface.ViewModels
                     IsLogined = Visibility.Visible;
                 }
             });
+
+            EventAggregator.GetEvent<PubSubEvent<EnumFormStatus>>().Subscribe((status) =>
+            {
+                if (status == EnumFormStatus.close)
+                {
+                    window.Close();
+                }
+            });
+
         });
         
         public DelegateCommand IKnowCommand => new(() =>
