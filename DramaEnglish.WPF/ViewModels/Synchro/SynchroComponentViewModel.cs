@@ -1,5 +1,6 @@
 ﻿using CommonService.Lines;
 using DramaEnglish.WPF.ViewModels;
+using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
@@ -100,6 +101,24 @@ namespace DramaEnglish.UserInterface.ViewModels.Synchro
         });
 
 
+        public DelegateCommand ExportNoMP4Command => new(()=> {
+            var path = $@"D:\Gitee\DramaEnglishMedia\Words\B_贝壳今日单词_纯单词.txt";
+            var words =CommonService.DB.WordDBService.GetEmpyMP4WORD();
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                foreach (var s in words)
+                {
+                    sw.WriteLine(s.EN);
+
+                }
+            }
+
+          
+        });
         #endregion
 
         #region 方法函数

@@ -16,8 +16,12 @@
                 <ColumnDefinition Width="200"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <ProgressBar Grid.Column="0" Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" Value="{Binding CurrentIndex}"></ProgressBar>
-            <Button Grid.Column="2" Width="200" Height="50" Command="{Binding SyncWordInfoCommand}">同步单词信息</Button>
-        </Grid>
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Button  Width="100" Height="50" Command="{Binding SyncWordInfoCommand}">同步单词信息</Button>
+                <Button  Width="100" Height="50" Command="{Binding ExportNoMP4Command}">导出无媒体单词</Button>
+
+            </StackPanel>
+             </Grid>
         <ScrollViewer Grid.Row="1">
             <TextBlock Padding="10"  Background="#1D1D1F" Foreground="Green" LineHeight="12" Text="{Binding ScanedWords}"></TextBlock>
         </ScrollViewer>
